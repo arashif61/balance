@@ -1,0 +1,88 @@
+$font-color: #d6d6d6;
+$font-color-off: #d4d1d1;
+$border-color: #7a7a7a;
+$dark: #1a2530 !default;
+
+.modal-content {
+  background-color: $dark;
+  color: $font-color-off;
+}
+
+.modal-header {
+  border-bottom-color: $font-color-off;
+}
+
+.modal-footer {
+  border-top-color: $font-color-off;
+}
+
+.btn-outline-light:hover, .btn-outline-warning:hover {
+  color: $dark;
+}
+
+.border-right {
+  border-right: 1px solid $font-color-off
+}
+
+.sub {
+  background: $dark;
+  color: $font-color;
+  border-color: $dark;
+}
+
+h1, h2, h3, h4 {
+  color: $font-color;
+}
+
+.form-control, .form-select {
+  background-color: $dark;
+  color: $font-color;
+  border-color: $border-color;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: $dark;
+  color: $font-color;
+  border-color: $font-color;
+  box-shadow: 0 0 0 .25rem rgba($color: $font-color, $alpha: .25)
+}
+
+.table-dark {
+  color: $font-color-off;
+}
+
+$danger: #e95858;
+
+.invalid-feedback {
+  color: $danger;
+}
+
+.is-invalid {
+  border-color: $danger !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e95858'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23e95858' stroke='none'/%3e%3c/svg%3e") !important;
+}
+
+.cmn-toggle + label:focus::before {
+  border-color: $border-color;
+}
+.cmn-toggle + label {
+  background-color: $border-color;
+}
+.cmn-toggle + label:before {
+  background-color: $dark;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23d6d6d6' class='bi bi-x' viewBox='0 0 16 16'>  <path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+}
+.cmn-toggle + label:after {
+  background-color: $font-color-off;
+}
+.cmn-toggle:checked + label {
+  background-color: $font-color;
+}
+.cmn-toggle:checked + label:before {
+  background-color: $font-color;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231a2530' class='bi bi-circle' viewBox='0 0 16 16'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/></svg>");
+}
+.cmn-toggle:checked + label:after {
+  background-color: $dark;
+}

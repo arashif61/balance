@@ -1,0 +1,282 @@
+$app-theme-color: #183f66;
+$primary: #24437e !default;
+$danger: #943a3a !default;
+$warning: #cfb232 !default;
+$dark: #1a2530 !default;
+$success: #315850 !default;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+@media print {
+  .print-hide {
+    display: none;
+  }
+}
+
+body {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴシック', 'MS Pゴシック', 'メイリオ', sans-serif;
+  counter-reset: page-number;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.home-logo {
+  height: 4.6rem;
+}
+
+.home-title {
+  font-size: 5em;
+}
+
+.trash-each:hover {
+  color: $danger;
+}
+
+.page::after {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  counter-increment: page-number;
+  content: "No." counter(page-number); 
+}
+
+.sheet {
+  page-break-after: always;
+}
+
+.preview-table td {
+  height: 26px;
+  font-size: 12px;
+  position: relative;
+}
+
+.collapse-btn .chevron::before {
+  transition: .5s;
+}
+
+.collapse-btn[aria-expanded="false"] .chevron::before {
+  transform: rotate(180deg);
+  transition: .5s;
+}
+
+.border-top-double {
+  border-top: 4px double #000000;
+}
+
+.border-left {
+  border-left: 1px solid #000000;
+}
+
+.border-top-black {
+  position: relative;
+}
+.border-top-black::before {
+  content: " ";
+  pointer-events: none;
+  position: absolute;
+  border-top: 1px solid #000000;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.peer-info {
+  font-size: 12px
+}
+
+.sub {
+  margin-left: -16px;
+  padding: 0px 2px;
+  font-size: 55%;
+  background: #f7f7f7;
+  border-radius: $border-radius;
+  border: #ffffff 0.2rem solid;
+}
+
+.main-link {
+  text-decoration: none;
+  color: $app-theme-color !important;
+}
+
+.main-link:hover {
+  text-decoration: none;
+  color: #425d79 !important;
+}
+
+#nav {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+#nav a {
+  font-weight: bold;
+  color: $app-theme-color;
+  margin: 2.5vh 0px;
+  padding: 4px 10px;
+  width: 100%;
+  transition: .3s;
+}
+
+#nav a:hover {
+  background-color: #dee2e6;
+  border-radius: $border-radius;
+  transition: .3s;
+}
+
+#nav a.router-link-exact-active {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: $app-theme-color;
+  border-radius: $border-radius;
+}
+
+#nav a.router-link-exact-active:hover {
+  color: #ffffff;
+  background-color: #234e77;
+  border-radius: $border-radius;
+  transition: .3s;
+}
+
+#nav i {
+  font-size: 150%;
+}
+
+h1, h2, h3, h4, h5:not(.preview), .zero-msg {
+  color: $app-theme-color;
+  font-weight: bold;
+  user-select: none
+}
+
+label, thead, #nav a, .input-group-text, .cursor-def {
+  cursor: default;
+  user-select: none
+}
+
+.zero-msg {
+  font-size: 20px;
+}
+
+.input-group-text {
+  cursor: default;
+}
+
+h3 i {
+  font-size: 140%;
+}
+
+.peer-info-address {
+  min-height: 100px !important;
+}
+
+.handle {
+  cursor: move;
+}
+
+.preview-table th {
+  font-size: 12px;
+}
+
+:focus {
+  outline: none;
+}
+
+.form-control-plaintext {
+  padding-left: 5px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.form-control-plaintext:hover {
+  color: $app-theme-color;
+  background-color: #d5dfe7;
+  border-radius: $border-radius;
+  transition: 0.1s;
+}
+
+.modal-body {
+  max-height: calc(100vh - 180px);
+  overflow-x: hidden;
+}
+
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.cmn-toggle + label:focus::before {
+  border-color: $form-check-input-focus-border;
+  outline: 0;
+  box-shadow: $form-check-input-focus-box-shadow;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  padding: 2px;
+  width: 60px;
+  height: 31px;
+  background-color: $input-border-color;
+  border-radius: $border-radius;
+  transition: 0.2s;
+}
+.cmn-toggle + label:before {
+  display: block;
+  position: absolute;
+  content: "";
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232c3e50' class='bi bi-x' viewBox='0 0 16 16'>  <path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  background-position: 60% 50%;
+}
+.cmn-toggle + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+.cmn-toggle + label:before {
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  right: 1px;
+  background-color: #ffffff;
+  border-radius: $border-radius;
+  transition: 0.2s;
+}
+.cmn-toggle + label:after {
+  top: 3px;
+  left: 3px;
+  bottom: 3px;
+  width: 10px;
+  background-color: $app-theme-color;
+  border-radius: 0.1rem;
+  transition: 0.2s;
+}
+.cmn-toggle:checked + label {
+  background-color: $app-theme-color;
+}
+.cmn-toggle:checked + label:before {
+  transition: 0.2s;
+  background-color: $app-theme-color;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' class='bi bi-circle' viewBox='0 0 16 16'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  background-position: 40% 50%;
+}
+.cmn-toggle:checked + label:after {
+  margin-left: 44px;
+  background-color: #ffffff;
+}
